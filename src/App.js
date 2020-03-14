@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import Container from 'react-bootstrap/Container'
+import Container from "react-bootstrap/Container";
 import handleClientLoad from "./features/auth";
 import NavBar from "./features/NavBar/NavBar";
 import EmailsList from "./features/emails/EmailsList";
-import MailModal from "./features/emails/MailModal/";
+import MailModal from "./features/emails/MailModal";
 
 const App = ({ gapiLoaded, handleClientLoad }) => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const App = ({ gapiLoaded, handleClientLoad }) => {
   }, []);
 
   return (
-    <Container flush>
+    <Container>
       <MailModal />
       <NavBar />
       <EmailsList />

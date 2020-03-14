@@ -1,25 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import {Row, Image, Col} from 'react-bootstrap';
-import AuthButton from "./AuthButton";
+import { Row, Image, Col } from "react-bootstrap";
+import "./AuthInfo.css";
 
 const AuthInfo = ({ authStatus, user }) => {
   return(
-    <>
+    <Row className="auth">
       {authStatus ? (
         <>
-          <Col xs={1}>
-            <Image src={user.picture} height={30} roundedCircle />
+          <Col xs="auto" className="auth-image">
+            <Image src={user.picture} height={38} roundedCircle />
           </Col>
-          <Col xs={6}>
+          <Col xs="auto" className="auth-info">
             {user.email} <br /> {user.name}
           </Col>
         </>
       ) : (
-        <Col xs={7} />
+        <Col xs={12} />
       )}
-      <AuthButton />
-    </>
+    </Row>
   );
 }
 

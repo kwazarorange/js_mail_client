@@ -6,17 +6,23 @@ import fetchEmailsByIds from "./functions/fetchEmailsByIds";
 
 const emailsSlice = createSlice({
   name: "emails",
-  initialState: [],
+  initialState: {},
   reducers: {
     addEmail: (state, action) => {
-      const email = action.payload;
-      state.push(...email);
+      const emails = action.payload;
+      console.log(emails);
+      emails.map(email => state[email.id] = email);
+    },
+    toggleOpenEmail: (state, action) => {
+      const id = action.payload;
+      const prev = state[id].isOpen;
+      state[id].isOpen = !prev;
     }
   }
 });
 
 const { reducer, actions } = emailsSlice;
-const { addEmail } = actions;
+export const { addEmail, toggleOpenEmail } = actions;
 
 export default reducer;
 

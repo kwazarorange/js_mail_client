@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import uuid from 'react-uuid'
-import {ListGroup, Accordion } from "react-bootstrap";
+import { Accordion } from "react-bootstrap";
 import { fetchEmails } from "./emailsSlice";
 import Email from "./Email";
 
@@ -14,8 +13,12 @@ const EmailsList = ({ emails, authStatus, fetchEmails }) => {
 
   return (
     <Accordion>
-      {emails.map(email => (
-        <Email key={uuid()} email={email} />
+      {Object.entries(emails).map(([id, email]) => (
+        <Email
+          key={id}
+          id={id}
+          email={email}
+        />
       ))}
     </Accordion>
   );

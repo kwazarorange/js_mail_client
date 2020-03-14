@@ -1,0 +1,9 @@
+.emailBody {
+  width: 100%;
+  height: 400px;
+}
+.emailBody .emailContent {
+  width: inherit;
+  height: inherit;
+  border:none;
+}

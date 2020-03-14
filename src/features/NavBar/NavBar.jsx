@@ -4,6 +4,7 @@ import {Navbar, Col, Form, FormControl } from "react-bootstrap";
 import BootstrapButton from "react-bootstrap/Button";
 import SendMailButton from "./SendMailButton";
 import AuthInfo from "./AuthInfo";
+import AuthButton from "./AuthButton";
 
 const NavBar = () => {
   return (
@@ -11,12 +12,17 @@ const NavBar = () => {
       <Col xs="auto">
         <SendMailButton />
       </Col>
-      <AuthInfo />
       <Col xs="auto">
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-        <BootstrapButton variant="outline-primary">Search</BootstrapButton>
-      </Form>
+        <AuthButton />
+      </Col>
+      <Col xs={5}>
+        <AuthInfo />
+      </Col>
+      <Col xs="auto">
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <BootstrapButton variant="outline-primary">Search</BootstrapButton>
+        </Form>
       </Col>
     </Navbar>
   );

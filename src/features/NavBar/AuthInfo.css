@@ -1,0 +1,14 @@
+.auth.row {
+  flex-flow: row;
+  display: flex;
+
+}
+.navbar {
+  height: 64px;
+}
+.auth-image.col-auto {
+  padding: 0px;
+  height: 38px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
